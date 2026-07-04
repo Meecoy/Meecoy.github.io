@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'Segoe UI';
+    src: url("assets/fonts/segoe_ui.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    font-family: "Segoe UI", sans-serif;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    background-image: url("assets/images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: none;
+    overflow: hidden;
+}
+
+#cursor {
+    position: fixed;
+    top: 0; left: 0;
+    width: 56px;
+    height: 46px;
+    pointer-events: none;
+    image-rendering: pixelated;
+    z-index: 9999;
+    will-change: transform;
+}
