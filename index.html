@@ -4,16 +4,97 @@
     <meta charset="utf-8">
     <title>--------- Meecoy ---------</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/images/php.png">
 </head>
 <body>
-<div class="wrapper">
-
+<img id="cursor" src="" alt="">
+<div class="container">
+    <div class="socials skeuomorphic">
+        <div class="grabber">
+            <div class="icon">
+                <img src="assets/images/socials.ico" width="20px" height="20px" alt="socials">
+            </div>
+            <div class="header">
+                <h1>Socials</h1>
+            </div>
+        </div>
+        <div class="content">
+            <div class="wrapper">
+                <div>
+                    <img src="assets/images/discord.png">
+                    <h1>@meeco_y</h1>
+                </div>
+                <div>
+                    <img src="assets/images/github.png">
+                    <h1>Meecoy</h1>
+                </div>
+                <div>
+                    <img src="assets/images/steam.ico">
+                    <h1>wetstreet.boys</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weather skeuomorphic">
+        <div class="grabber">
+            <div class="icon">
+                <img src="assets/images/weather.ico" width="20px" height="20px" alt="socials">
+            </div>
+            <div class="header">
+                <h1>Weather</h1>
+            </div>
+        </div>
+        <div class="content">
+            <div class="wrapper">
+                <div class="my-weather skeuomorphic">
+                    <div class="grabber">
+                        <h1>My weather</h1>
+                    </div>
+                    <div class="weather-content">
+                        <img src="assets/images/weather/Clear sky.png" alt="My weather" id="myWeatherImage">
+                        <hr>
+                        <div>
+                            <div>
+                                <h1 id="myTemperature"></h1>
+                            </div>
+                            <div>
+                                <h1 id="myWindSpeed"></h1>
+                            </div>
+                            <div>
+                                <h1 id="myWeatherType"></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="your-weather skeuomorphic">
+                    <div class="grabber">
+                        <h1>Your weather</h1>
+                    </div>
+                    <div class="weather-content">
+                        <img src="assets/images/weather/Clear sky.png" alt="Your weather" id="yourWeatherImage">
+                        <hr>
+                        <div>
+                            <div>
+                                <h1 id="yourTemperature"></h1>
+                            </div>
+                            <div>
+                                <h1 id="yourWindSpeed"></h1>
+                            </div>
+                            <div>
+                                <h1 id="yourWeatherType"></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<img id="cursor" src="" alt="">
 
 <script src="cursor.js"></script>
 <script src="title.js"></script>
-<script src="searchbar.js"></script>
+<!--<script src="searchbar.js"></script>-->
+<script src="weather.js" type="module"></script>
 </body>
 </html>

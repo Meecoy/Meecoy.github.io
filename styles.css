@@ -1,18 +1,19 @@
 @font-face {
-    font-family: 'Segoe UI';
+    font-family: 'Toxigenesis';
     src: url("assets/fonts/segoe_ui.ttf");
     font-weight: normal;
     font-style: normal;
 }
 
-h1 {
-    font-family: "Segoe UI", sans-serif;
+* {
+    font-family: "Toxigenesis", sans-serif;
+    cursor: none;
 }
 
 html, body {
     margin: 0;
     height: 100%;
-    background-image: url("assets/images/background.jpg");
+    background-image: url("assets/images/bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     cursor: none;
@@ -21,11 +22,223 @@ html, body {
 
 #cursor {
     position: fixed;
-    top: 0; left: 0;
-    width: 56px;
-    height: 46px;
-    pointer-events: none;
-    image-rendering: pixelated;
+    top: 0;
+    left: 0;
     z-index: 9999;
-    will-change: transform;
+    pointer-events: none;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+.skeuomorphic {
+    --color: #4290cd;
+    --radius: 10%;
+    --elevation: 20px;
+    --bevel: 2px;
+    --opacity: 50%;
+    --blurriness: 0.3px;
+    --angle: 90deg;
+    --intensity: 44;
+    --diffusion: 34;
+
+    --sin: calc(sin(var(--angle)));
+    --cos: calc(cos(var(--angle)));
+    --x-displacement: calc(-1 * var(--cos) * (var(--elevation) + 1px));
+    --y-displacement: calc(-1 * var(--sin) * (var(--elevation) + 1px));
+    --edge-opacity: calc(var(--intensity) * 0.006 - var(--diffusion) * 0.002);
+    --edge-blur: calc(var(--bevel) * 1.5);
+    --surface-contrast: calc(var(--intensity) * 0.01 - var(--diffusion) * 0.005);
+
+    border-radius: var(--radius);
+    box-shadow: var(--x-displacement) var(--y-displacement) calc(var(--diffusion) * 0.3px + (var(--elevation))) calc(var(--elevation) / 2) rgba(0, 0, 0, calc(var(--intensity) * 0.006)),
+    0px 0px calc(var(--diffusion) * 1.4px) rgba(255, 255, 255, calc(var(--intensity) * 0.004)),
+    inset calc(var(--bevel) * -1) 0 var(--edge-blur) hsla(100, 0%, calc((var(--cos) + 1) * 50%), var(--edge-opacity)),
+    inset 0 var(--bevel) var(--edge-blur) hsla(100, 0%, calc((-1 * var(--sin) + 1) * 50%), var(--edge-opacity)),
+    inset var(--bevel) 0 var(--edge-blur) hsla(100, 0%, calc((-1 * var(--cos) + 1) * 50%), var(--edge-opacity)),
+    inset 0 calc(var(--bevel) * -1) var(--edge-blur) hsla(100, 0%, calc((var(--sin) + 1) * 50%), var(--edge-opacity));
+    background-color: color-mix(in srgb, var(--color) var(--opacity), transparent calc(100% - var(--opacity)));
+    backdrop-filter: blur(var(--blurriness));
+
+    background-blend-mode: soft-light;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-radius: var(--radius);
+        background: linear-gradient(calc(var(--angle) + 90deg), hsla(0, 0%, 100%, 0) 40%, hsla(0, 0%, 100%, var(--surface-contrast)));
+    }
+}
+
+
+.socials {
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.grabber {
+    width: 100%;
+    height: 10%;
+    --color: #41b011;
+    --radius: 10%;
+    --elevation: 10px;
+    --bevel: 2px;
+    --angle: 270deg;
+    --intensity: 70;
+    --diffusion: 30;
+
+    /*======= Computed Variables =======*/
+    --sin: calc(sin(var(--angle)));
+    --cos: calc(cos(var(--angle)));
+    --x-displacement: calc(-1 * var(--cos) * (var(--elevation) + 1px));
+    --y-displacement: calc(-1 * var(--sin) * (var(--elevation) + 1px));
+    --edge-opacity: calc(var(--intensity) * 0.006 - var(--diffusion) * 0.002);
+    --edge-blur: calc(var(--bevel) * 1.5);
+    --surface-contrast: calc(var(--intensity) * 0.01 - var(--diffusion) * 0.005);
+
+    /*======= Computed Properties =======*/
+    border-radius: var(--radius);
+    box-shadow: var(--x-displacement) var(--y-displacement) calc(var(--diffusion) * 0.3px + (var(--elevation))) calc(var(--elevation) / 2) rgba(0, 0, 0, calc(var(--intensity) * 0.006)),
+    0px 0px calc(var(--diffusion) * 1.4px) rgba(255, 255, 255, calc(var(--intensity) * 0.004)),
+    inset calc(var(--bevel) * -1) 0 var(--edge-blur) hsla(100, 0%, calc((var(--cos) + 1) * 50%), var(--edge-opacity)),
+    inset 0 var(--bevel) var(--edge-blur) hsla(100, 0%, calc((-1 * var(--sin) + 1) * 50%), var(--edge-opacity)),
+    inset var(--bevel) 0 var(--edge-blur) hsla(100, 0%, calc((-1 * var(--cos) + 1) * 50%), var(--edge-opacity)),
+    inset 0 calc(var(--bevel) * -1) var(--edge-blur) hsla(100, 0%, calc((var(--sin) + 1) * 50%), var(--edge-opacity));
+    background: linear-gradient(
+            calc(var(--angle) + 90deg),
+            rgba(0, 0, 0, var(--surface-contrast)),
+            rgba(255, 255, 255, var(--surface-contrast))
+    ),
+    var(--color);
+    /*======== Static Properties ========*/
+    background-blend-mode: soft-light;
+    display: flex;
+    flex-direction: row;
+}
+
+.grabber > .header {
+    width: 85%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.grabber > .icon {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content > .wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.socials .content > .wrapper div {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.socials .content > .wrapper div > img {
+    width: 50px;
+    height: 50px;
+    margin-right: 5%;
+}
+
+
+h1 {
+    color: white;
+    font-size: 1rem;
+}
+
+.weather {
+    margin-top: 10px;
+    width: 400px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    --radius: 5%
+}
+
+.weather > .grabber {
+    height: 5%;
+}
+
+.weather > .content {
+    height: 95%;
+}
+
+.my-weather, .your-weather {
+    --elevation: 0px;
+    height: 45%;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.weather > .content img {
+    width: 200px;
+    height: 150px;
+}
+
+.my-weather > .grabber, .your-weather > .grabber {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather-content > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.weather-content > div > div {
+    width: 33%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+hr {
+    width: 80%;
 }
