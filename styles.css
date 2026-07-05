@@ -67,16 +67,6 @@ html, body {
     position: relative;
     overflow: hidden;
 
-    &::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        top: 0;
-        left: 0;
-        right: 0;
-        border-radius: var(--radius);
-        background: linear-gradient(calc(var(--angle) + 90deg), hsla(0, 0%, 100%, 0) 40%, hsla(0, 0%, 100%, var(--surface-contrast)));
-    }
 }
 
 
@@ -162,6 +152,13 @@ html, body {
     display: flex;
     flex-direction: row;
     margin-top: 10px;
+}
+
+.socials .content > .wrapper a {
+    display: contents;
+    text-decoration: none;
+    color: inherit;
+    cursor: none;
 }
 
 .socials .content > .wrapper div > img {
