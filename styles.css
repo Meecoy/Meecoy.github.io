@@ -31,7 +31,12 @@ html, body {
 .container {
     width: 100%;
     height: 100%;
-    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.container > div {
+    margin: 10px;
 }
 
 .skeuomorphic {
@@ -233,9 +238,53 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+}
+
+.weather-content > div > div > h1 {
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 hr {
     width: 80%;
 }
+
+.wrapper > a:hover > div > h1{
+    color: yellow;
+}
+
+.clippy {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.message {
+    width: 200px;
+    height: 150px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+    background-color: #fcfacf;
+}
+
+.message > h1 {
+    color: black;
+    font-size: 1rem;
+    margin: 1px;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.clippy > .img {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.clippy > .img > div {
+    background-color: #fcfacf;
+    --elevation: 5px;
+    border-radius: 100%;
+}
+
+

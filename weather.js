@@ -18,6 +18,8 @@ const myHour = Number(new Intl.DateTimeFormat('pl-PL', {
 }).format(new Date())
 );
 
+export let failed = false;
+
 const weatherDescriptions = {
     0: "Clear sky",
     1: "Mainly clear",
@@ -131,5 +133,7 @@ try {
     yourTemperature.innerHTML = "N/A";
     yourImg.src = "assets/images/weather/na.png";
     yourWindSpeed.innerHTML = "N/A";
+    yourWeatherType.innerHTML = "N/A";
+    failed = true;
 }
 displayWeather(myWeather, yourWeather);

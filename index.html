@@ -8,95 +8,115 @@
 </head>
 <body>
 <img id="cursor" src="" alt="">
-<div class="container">
-    <div class="socials skeuomorphic">
-        <div class="grabber">
-            <div class="icon">
-                <img src="assets/images/socials.ico" width="20px" height="20px" alt="socials">
-            </div>
-            <div class="header">
-                <h1>Socials</h1>
-            </div>
-        </div>
-        <div class="content">
-            <div class="wrapper">
-                <div>
-                    <img src="assets/images/discord.png">
-                    <h1>@meeco_y</h1>
-                </div>
-                <a href="https://github.com/Meecoy" target="_blank">
-                    <div>
-                        <img src="assets/images/github.png">
-                        <h1>Meecoy</h1>
-                    </div>
-                </a>
-                <div>
-                    <img src="assets/images/steam.ico">
-                    <h1>wetstreet.boys</h1>
-                </div>
-            </div>
-        </div>
+<div class="clippy">
+    <div class="message" id="messageBox" hidden>
+        <h1 id="message"></h1>
     </div>
-    <div class="weather skeuomorphic">
-        <div class="grabber">
-            <div class="icon">
-                <img src="assets/images/weather.ico" width="20px" height="20px" alt="socials">
-            </div>
-            <div class="header">
-                <h1>Weather</h1>
-            </div>
-        </div>
-        <div class="content">
-            <div class="wrapper">
-                <div class="my-weather skeuomorphic">
-                    <div class="grabber">
-                        <h1>My weather</h1>
-                    </div>
-                    <div class="weather-content">
-                        <img src="assets/images/weather/Clear sky.png" alt="My weather" id="myWeatherImage">
-                        <hr>
-                        <div>
-                            <div>
-                                <h1 id="myTemperature"></h1>
-                            </div>
-                            <div>
-                                <h1 id="myWindSpeed"></h1>
-                            </div>
-                            <div>
-                                <h1 id="myWeatherType"></h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="your-weather skeuomorphic">
-                    <div class="grabber">
-                        <h1>Your weather</h1>
-                    </div>
-                    <div class="weather-content">
-                        <img src="assets/images/weather/Clear sky.png" alt="Your weather" id="yourWeatherImage">
-                        <hr>
-                        <div>
-                            <div>
-                                <h1 id="yourTemperature"></h1>
-                            </div>
-                            <div>
-                                <h1 id="yourWindSpeed"></h1>
-                            </div>
-                            <div>
-                                <h1 id="yourWeatherType"></h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="img">
+        <div class="skeuomorphic">
+            <img src="assets/images/clippy/0.png" alt="clippy" id="clippy">
         </div>
     </div>
 </div>
+<div class="container">
+    <div>
+        <div class="socials skeuomorphic">
+            <div class="grabber">
+                <div class="icon">
+                    <img src="assets/images/socials.ico" width="20px" height="20px" alt="socials">
+                </div>
+                <div class="header">
+                    <h1>Socials</h1>
+                </div>
+            </div>
+            <div class="content">
+                <div class="wrapper">
+                    <a id="discord">
+                        <div>
+                            <img src="assets/images/discord.png">
+                            <h1>@meeco_y</h1>
+                        </div>
+                    </a>
+                    <a href="https://github.com/Meecoy" target="_blank" id="github">
+                        <div>
+                            <img src="assets/images/github.png" alt="github">
+                            <h1>Meecoy</h1>
+                        </div>
+                    </a>
+                    <a href="https://steamcommunity.com/profiles/76561198355906534/" target="_blank" id="steam">
+                        <div>
+                            <img src="assets/images/steam.ico" alt="steam">
+                            <h1>wetstreet.boys</h1>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="weather skeuomorphic">
+            <div class="grabber">
+                <div class="icon">
+                    <img src="assets/images/weather.ico" width="20px" height="20px" alt="socials">
+                </div>
+                <div class="header">
+                    <h1>Weather</h1>
+                </div>
+            </div>
+            <div class="content">
+                <div class="wrapper">
+                    <div class="my-weather skeuomorphic">
+                        <div class="grabber">
+                            <h1>My weather</h1>
+                        </div>
+                        <div class="weather-content">
+                            <img src="assets/images/weather/Clear sky.png" alt="My weather" id="myWeatherImage">
+                            <hr>
+                            <div>
+                                <div>
+                                    <h1 id="myTemperature"></h1>
+                                </div>
+                                <div>
+                                    <h1 id="myWindSpeed"></h1>
+                                </div>
+                                <div>
+                                    <h1 id="myWeatherType"></h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="your-weather skeuomorphic">
+                        <div class="grabber">
+                            <h1>Your weather</h1>
+                        </div>
+                        <div class="weather-content">
+                            <img src="assets/images/weather/Clear sky.png" alt="Your weather" id="yourWeatherImage">
+                            <hr>
+                            <div>
+                                <div>
+                                    <h1 id="yourTemperature"></h1>
+                                </div>
+                                <div>
+                                    <h1 id="yourWindSpeed"></h1>
+                                </div>
+                                <div>
+                                    <h1 id="yourWeatherType"></h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+    </div>
+</div>
+
 
 
 <script src="cursor.js"></script>
 <script src="title.js"></script>
 <!--<script src="searchbar.js"></script>-->
 <script src="weather.js" type="module"></script>
+<script src="clippy.js" type="module"></script>
 </body>
 </html>
