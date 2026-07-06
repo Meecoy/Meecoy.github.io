@@ -11,7 +11,7 @@ const sunny = !night && yourWeather.weatherCode <= 3;
 
 const messages = {
     "N/A": "It looks like you don't want to tell me where you live. I will remember that...",
-    "discord": "That's my discord! Unfortunately you can't add me through link, so you have to do this manually.",
+    "discord": "That's my Discord account! Unfortunately you can't add me through link, so you have to do this manually.",
     "windy": "Brrr! It's so windy here!",
     "night": "Yawn... Go get some sleep...",
     "sunny": "It's such a nice day today, isn't it?"
