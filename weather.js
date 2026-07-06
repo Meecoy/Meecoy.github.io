@@ -10,7 +10,7 @@ const yourWindSpeed = document.getElementById("yourWindSpeed");
 const myWeatherType = document.getElementById("myWeatherType");
 const yourWeatherType = document.getElementById("yourWeatherType");
 
-const yourHour = new Date().getHours();
+export const yourHour = new Date().getHours();
 const myHour = Number(new Intl.DateTimeFormat('pl-PL', {
     timeZone: "Europe/Warsaw",
     hour: "numeric",
@@ -126,7 +126,7 @@ function displayWeather(myWeatherValue, yourWeatherValue){
 }
 
 const myWeather = await getMyWeather();
-let yourWeather;
+export let yourWeather;
 try {
     yourWeather = await getYourWeather();
 } catch (error){
